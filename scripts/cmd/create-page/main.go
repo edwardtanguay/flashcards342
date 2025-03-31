@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/edwardtanguay/flashcards342/utils"
+)
 
 func main() {
-	fmt.Println("this will parse data into a JSON file")
+	utils.Devlog("this will parse data into a JSON file")
 }
