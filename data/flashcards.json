@@ -1,26 +1,32 @@
 [
-  {
-    "suuid": "82zs23",
-    "category": "linux",
-    "front": "how to find out your shell",
-    "back": "echo $0"
-  },
-  {
-    "suuid": "2Jjq4a",
-    "category": "git",
-    "front": "get back file from staging area to working directory, i.e. unstage a file",
-    "back": "git reset [file]"
-  },
-  {
-    "suuid": "891As1",
-    "category": "git",
-    "front": "show commit history with hash, title, author",
-    "back": "git log --pretty=format:\"%h - %s - %an\" "
-  },
-  {
-    "suuid": "3bCd45",
-    "category": "linux",
-    "front": "navigate to the home directory",
-    "back": "cd ~"
-  }
+	{
+		"suuid": "HRLVVG",
+		"category": "it",
+		"front": "and it will take some time",
+		"back": "e ci vorrà del tempo"
+	},
+	{
+		"suuid": "EAuSM5",
+		"category": "it",
+		"front": "this will ensure that you get",
+		"back": "cìo garantirà di ottenere"
+	},
+	{
+		"suuid": "gWge9b",
+		"category": "es",
+		"front": "this has certain advantages",
+		"back": "est tiene ciertas ventajas"
+	},
+	{
+		"suuid": "1mbX9K",
+		"category": "es",
+		"front": "in such a way that",
+		"back": "de tal manera que"
+	},
+	{
+		"suuid": "BY5KWx",
+		"category": "de",
+		"front": "we are finished",
+		"back": "wir sind fertig"
+	}
 ]

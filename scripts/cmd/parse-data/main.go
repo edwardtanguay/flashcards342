@@ -42,7 +42,7 @@ func main() {
 			return
 		}
 
-		err = os.WriteFile("../../../datajson/flashcards.json", jsonData, 0644)
+		err = os.WriteFile("../../../data/flashcards.json", jsonData, 0644)
 		if err != nil {
 			fmt.Printf("Error writing JSON file: %v\n", err)
 			return
