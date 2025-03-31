@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/edwardtanguay/flashcards342/utils"
+)
 
 func main() {
-	fmt.Println("this will create a new page in the app")
+	lines := utils.GetLinesFromFile("test.txt")
+	fmt.Println(lines)
 }
