@@ -1,12 +1,53 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
+	"strings"
 
 	"github.com/edwardtanguay/flashcards342/utils"
 )
 
+type Flashcard struct {
+	Suuid    string `json:"suuid"`
+	Category string `json:"category"`
+	Front    string `json:"front"`
+	Back     string `json:"back"`
+}
+
 func main() {
-	lines := utils.GetLinesFromFile("test.txt")
-	fmt.Println(lines)
+	fmt.Println("parsing flashcards.txt into flashcards.json...")
+	lines := utils.GetLinesFromFile("../../../data/flashcards.txt")
+
+	var flashcards []Flashcard
+	for i := 0; i < len(lines); i += 4 {
+		if i+3 > len(lines) {
+			break
+		}
+		category := strings.TrimSpace(lines[i])
+		front := strings.TrimSpace(lines[i+1])
+		back := strings.TrimSpace(lines[i+2])
+
+		flashcards = append(flashcards, Flashcard{
+			Suuid:    utils.GenerateShortUUID(),
+			Category: category,
+			Front:    front,
+			Back:     back,
+		})
+
+		jsonData, err := json.MarshalIndent(flashcards, "", "\t")
+		if err != nil {
+			fmt.Printf("Error marshaling JSON: %v\n", err)
+			return
+		}
+
+		err = os.WriteFile("../../../datajson/flashcards.json", jsonData, 0644)
+		if err != nil {
+			fmt.Printf("Error writing JSON file: %v\n", err)
+			return
+		}
+		fmt.Println("successfully updated flashcards.json")
+	}
+
 }
